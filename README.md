@@ -2,6 +2,8 @@
 
 TypeScript SDK for the `screenshot-api` service. Works in Next.js (App Router & Pages), Node.js, and plain React.
 
+> **Prerequisite:** This SDK requires a running instance of the [screenshot-api](https://github.com/Mo7amedDev/screenshot-api). You can easily deploy it using Docker.
+
 ---
 
 ## Installation
