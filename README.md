@@ -6,21 +6,18 @@ TypeScript SDK for the `screenshot-api` service. Works in Next.js (App Router & 
 
 ## Installation
 
-Copy the `screenshot-sdk/` folder into your project, then install its single build dependency:
+Install the package from npm:
 
 ```bash
-npm install tsup typescript --save-dev
-npm run build          # outputs to dist/
+npm install screenshot-web-sdk
 ```
-
-Or import the `src/` files directly in your Next.js project — no build step needed when using TypeScript with `tsconfig` path aliases.
 
 ---
 
 ## Quick start
 
 ```ts
-import { createScreenshotClient } from '@/lib/screenshot-sdk';
+import { createScreenshotClient } from 'screenshot-web-sdk';
 
 const screenshot = createScreenshotClient({
   baseUrl: process.env.SCREENSHOT_API_URL!, // e.g. 'http://localhost:3000'
@@ -36,7 +33,7 @@ const screenshot = createScreenshotClient({
 ```tsx
 'use client';
 
-import { createScreenshotClient, useWebsiteScreenshot } from '@/lib/screenshot-sdk';
+import { createScreenshotClient, useWebsiteScreenshot } from 'screenshot-web-sdk';
 
 const client = createScreenshotClient({ baseUrl: '/api/screenshot-proxy' });
 
@@ -78,7 +75,7 @@ export function WebCapture() {
 ```tsx
 'use client';
 
-import { createScreenshotClient, useHtmlScreenshot } from '@/lib/screenshot-sdk';
+import { createScreenshotClient, useHtmlScreenshot } from 'screenshot-web-sdk';
 
 const client = createScreenshotClient({ baseUrl: '/api/screenshot-proxy' });
 
@@ -111,7 +108,7 @@ export function OgPreview() {
 ```tsx
 'use client';
 
-import { createScreenshotClient, useScreenshotToUrl } from '@/lib/screenshot-sdk';
+import { createScreenshotClient, useScreenshotToUrl } from 'screenshot-web-sdk';
 
 const client = createScreenshotClient({ baseUrl: '/api/screenshot-proxy' });
 
@@ -152,7 +149,7 @@ export function SaveCapture() {
 ```ts
 // app/api/screenshot/route.ts
 import { NextRequest, NextResponse } from 'next/server';
-import { createScreenshotClient } from '@/lib/screenshot-sdk';
+import { createScreenshotClient } from 'screenshot-web-sdk';
 
 const client = createScreenshotClient({
   baseUrl: process.env.SCREENSHOT_API_URL!,
@@ -182,7 +179,7 @@ export async function POST(req: NextRequest) {
 ```ts
 // app/api/og/route.ts
 import { NextRequest, NextResponse } from 'next/server';
-import { createScreenshotClient } from '@/lib/screenshot-sdk';
+import { createScreenshotClient } from 'screenshot-web-sdk';
 
 const client = createScreenshotClient({
   baseUrl: process.env.SCREENSHOT_API_URL!,
@@ -240,7 +237,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 // app/actions/screenshot.ts
 'use server';
 
-import { createScreenshotClient } from '@/lib/screenshot-sdk';
+import { createScreenshotClient } from 'screenshot-web-sdk';
 
 const client = createScreenshotClient({
   baseUrl: process.env.SCREENSHOT_API_URL!,
@@ -282,7 +279,7 @@ export function CaptureButton({ url }: { url: string }) {
 ```tsx
 'use client';
 
-import { createScreenshotClient, useStorage } from '@/lib/screenshot-sdk';
+import { createScreenshotClient, useStorage } from 'screenshot-web-sdk';
 
 const client = createScreenshotClient({ baseUrl: '/api/screenshot-proxy' });
 
