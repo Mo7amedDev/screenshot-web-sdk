@@ -1,0 +1,8 @@
+0- npm view screenshot-web-sdk // this to check if there is package already someone create with same name
+
+01- update version
+1- npm login
+2- npm run build
+3- npm publish --access public 
+
+

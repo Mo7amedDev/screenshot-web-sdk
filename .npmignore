@@ -1,0 +1,11 @@
+# Source — users only need the compiled dist/
+src/
+tsconfig.json
+
+# Dev / build tooling
+node_modules/
+*.log
+
+# Misc
+.env
+.DS_Store
